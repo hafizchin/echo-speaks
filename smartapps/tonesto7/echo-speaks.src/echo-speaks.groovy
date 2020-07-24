@@ -2417,7 +2417,7 @@ def echoDevicesResponse(response, data) {
             }
         }
         // log.debug "echoDevices: ${echoDevices}"
-        def musicProvs = state?.musicProviders ?: getMusicProviders(true)
+        def musicProvs = state?.musicProviders ?: getMusicProviders()
         receiveEventData([echoDevices: echoDevices, musicProviders: musicProvs, execDt: data?.execDt], "Groovy")
     } catch (ex) {
         respExceptionHandler(ex, "echoDevicesResponse")
